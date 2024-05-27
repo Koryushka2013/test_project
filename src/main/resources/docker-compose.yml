@@ -1,0 +1,14 @@
+version: '3.1'
+services:
+  pg_db:
+    image: postgres
+    restart: always
+    environment:
+      - POSTGRES_PASSWORD=test_project
+      - POSTGRES_USER=test_project
+      - POSTGRES_DB=test_project
+    volumes:
+      - /var/lib/postgresql/test_project
+    ports:
+      - ${POSTGRES_PORT:-5432}:5432
+      
